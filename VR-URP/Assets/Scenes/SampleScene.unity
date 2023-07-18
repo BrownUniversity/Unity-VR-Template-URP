@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 163104670}
   - component: {fileID: 163104669}
   m_Layer: 0
-  m_Name: Left Teleport Ray Controller
+  m_Name: Left Teleport Ray Interactor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1483,6 +1483,7 @@ GameObject:
   m_Component:
   - component: {fileID: 554614380}
   - component: {fileID: 554614379}
+  - component: {fileID: 554614382}
   - component: {fileID: 554614378}
   - component: {fileID: 554614377}
   - component: {fileID: 554614381}
@@ -1619,6 +1620,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_System: {fileID: 554614379}
   m_DelayTime: 0
+--- !u!114 &554614382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554614376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e1d8ec5fcf6480daa83d05235b7648, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &674622172
 GameObject:
   m_ObjectHideFlags: 0
@@ -2758,7 +2771,7 @@ GameObject:
   - component: {fileID: 1016938122}
   - component: {fileID: 1016938121}
   m_Layer: 0
-  m_Name: Right Teleport Ray Controller
+  m_Name: Right Teleport Ray Interactor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
