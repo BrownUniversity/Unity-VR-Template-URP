@@ -13,15 +13,20 @@ public class LocomotionManager : MonoBehaviour
     private TeleportationProvider _teleporationProvider;
     private ContinuousMoveProviderBase _continuousMoveProvider;
 
+    private bool _teleportSelected = true;
+
     private void Start()
     {
         _teleporationProvider = GetComponent<TeleportationProvider>();
         _continuousMoveProvider = GetComponent<ContinuousMoveProviderBase>();
+
+        SwitchLocomotion(_teleportSelected);
     }
 
-    public void SwitchLocomotion(bool locomotionValue)
-    {
-        if(locomotionValue)
+    public void SwitchLocomotion(bool locomotionValue) {
+        _teleportSelected = locomotionValue;
+
+        if(_teleportSelected)
         {
             ContinuousSetActive(false);
             TeleportSetActive(true);
@@ -31,6 +36,12 @@ public class LocomotionManager : MonoBehaviour
             TeleportSetActive(false);
             ContinuousSetActive(true);
         }
+    }
+
+    public void ToggleLocomotion()
+    {
+        _teleportSelected = !_teleportSelected;
+        SwitchLocomotion(_teleportSelected);
     }
 
     private void ContinuousSetActive(bool active)

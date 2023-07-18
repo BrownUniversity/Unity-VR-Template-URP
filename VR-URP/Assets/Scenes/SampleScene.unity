@@ -1385,6 +1385,7 @@ GameObject:
   - component: {fileID: 554614378}
   - component: {fileID: 554614377}
   - component: {fileID: 554614381}
+  - component: {fileID: 554614383}
   m_Layer: 0
   m_Name: Locomotion System
   m_TagString: Untagged
@@ -1438,7 +1439,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 554614376}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0bf296fc962d7184ab14ad1841598d5f, type: 3}
   m_Name: 
@@ -1511,7 +1512,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 554614376}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01f69dc1cb084aa42b2f2f8cd87bc770, type: 3}
   m_Name: 
@@ -1530,9 +1531,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01e1d8ec5fcf6480daa83d05235b7648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftTeleportRayInteractor: {fileID: 0}
-  rightTeleportRayInteractor: {fileID: 0}
+  leftTeleportRayInteractor: {fileID: 163104667}
+  rightTeleportRayInteractor: {fileID: 1016938119}
   teleportActivationReference: {fileID: 0}
+--- !u!114 &554614383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554614376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d13f618ee14c4d789f036f0f71ed167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action:
+    m_Name: Action
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 286bb65c-12ea-4b2e-84fd-b8a214120d2c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 9cd8ec78-9121-443e-a313-8e984ecbcd27
+      m_Path: <XRController>{LeftHand}/secondaryButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Action
+      m_Flags: 0
+    m_Flags: 0
+  OnPress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 554614382}
+        m_TargetAssemblyTypeName: LocomotionManager, Assembly-CSharp
+        m_MethodName: ToggleLocomotion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  OnRelease:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &674622172
 GameObject:
   m_ObjectHideFlags: 0
