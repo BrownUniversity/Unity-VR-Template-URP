@@ -20,6 +20,14 @@ public class MenuController : MonoBehaviour
         ActivateMenu(_menuDisplayed);
     }
 
+    public void Cancel() => ActivateMenu(false);
+
+    public void Submit()
+    {
+
+        ActivateMenu(false);
+    }
+
     private void ActivateMenu( bool activate )
     {
         if (activate)
