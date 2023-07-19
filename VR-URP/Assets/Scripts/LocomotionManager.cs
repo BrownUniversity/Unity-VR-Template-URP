@@ -8,8 +8,6 @@ public class LocomotionManager : MonoBehaviour
     public GameObject leftTeleportRayInteractor;
     public GameObject rightTeleportRayInteractor;
 
-    public InputActionReference teleportActivationReference;
-
     private TeleportationProvider _teleporationProvider;
     private ContinuousMoveProviderBase _continuousMoveProvider;
 
