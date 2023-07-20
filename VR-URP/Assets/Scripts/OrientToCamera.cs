@@ -20,14 +20,6 @@ public class OrientToCamera : MonoBehaviour
         ActivateMenu(_objectActive);
     }
 
-    public void Cancel() => ActivateMenu(false);
-
-    public void Submit()
-    {
-
-        ActivateMenu(false);
-    }
-
     private void ActivateMenu( bool activate )
     {
         if (activate)
