@@ -10,14 +10,25 @@ public class OrientToCamera : MonoBehaviour
 
     private bool _objectActive;
 
-    public void Toggle()
+    private void Awake()
     {
-        _objectActive = !_objectActive;
+        _objectActive = targetObject.activeSelf;
+    }
+
+    private void Update()
+    {
+        if (_objectActive == targetObject.activeSelf)
+            return;
+        
+        _objectActive = targetObject.activeSelf;
 
         if (_objectActive)
             UpdateOrientation();
+    }
 
-        targetObject.SetActive(_objectActive);
+    public void Toggle()
+    {
+        targetObject.SetActive(!targetObject.activeSelf);
     }
 
 
