@@ -8804,6 +8804,7 @@ MonoBehaviour:
   userCamera: {fileID: 282635759}
   distanceFromUser: 2
   heightFromGround: 1.5
+  reverseObject: 1
 --- !u!1 &1990020153
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class OrientToCamera : MonoBehaviour
     public GameObject userCamera;
     public float distanceFromUser = 2.0f;
     public float heightFromGround = 1.5f;
+    public bool reverseObject;
 
     private bool _objectActive;
 
@@ -65,6 +66,7 @@ public class OrientToCamera : MonoBehaviour
         targetObject.transform.position = GetNewPosition();
 
         targetObject.transform.LookAt(userCamera.transform);
-        targetObject.transform.Rotate(0, 180.0f, 0);
+        if(reverseObject )
+            targetObject.transform.Rotate(0, 180.0f, 0);
     }
 }
