@@ -31,14 +31,19 @@ public class OrientToCamera : MonoBehaviour
         targetObject.SetActive(!targetObject.activeSelf);
     }
 
-
-    private void UpdateOrientation()
+    private Vector3 GetNewPosition()
     {
         Vector3 newPosition = userCamera.transform.TransformPoint(0, 0, distanceFromUser);
         newPosition.y = userCamera.transform.position.y;
-        targetObject.transform.position = newPosition;
 
-        targetObject.transform.position = newPosition;
+        return newPosition;
+    }
+
+
+    private void UpdateOrientation()
+    {
+        targetObject.transform.position = GetNewPosition();
+
         targetObject.transform.LookAt(userCamera.transform);
         targetObject.transform.Rotate(0, 180.0f, 0);
     }
