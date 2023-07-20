@@ -24,7 +24,7 @@ public class OrientToCamera : MonoBehaviour
         _objectActive = targetObject.activeSelf;
 
         if (_objectActive)
-            UpdateOrientation();
+            UpdateOrientation(GetNewPosition());
     }
 
     public void Toggle()
@@ -40,16 +40,13 @@ public class OrientToCamera : MonoBehaviour
         Vector3 newPosition = GetNewPosition();
         float distance = Vector3.Distance(newPosition, targetObject.transform.position);
 
-        if(distance > 0.5)
+        if(distance > 0.75)
         {
-            UpdateOrientation();
+            UpdateOrientation(newPosition);
         } else
         {
             targetObject.SetActive(!targetObject.activeSelf);
         }
-        
-
-
     }
 
     private Vector3 GetNewPosition()
@@ -61,9 +58,9 @@ public class OrientToCamera : MonoBehaviour
     }
 
 
-    private void UpdateOrientation()
+    private void UpdateOrientation(Vector3 newPosition)
     {
-        targetObject.transform.position = GetNewPosition();
+        targetObject.transform.position = newPosition;
 
         targetObject.transform.LookAt(userCamera.transform);
         if(reverseObject )
