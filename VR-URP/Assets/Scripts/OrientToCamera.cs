@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class MenuController : MonoBehaviour
+public class OrientToCamera : MonoBehaviour
 {
     public GameObject menu;
     public GameObject userCamera;
