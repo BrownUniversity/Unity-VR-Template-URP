@@ -3,21 +3,21 @@ using UnityEngine;
 
 public class OrientToCamera : MonoBehaviour
 {
-    public GameObject menu;
+    public GameObject targetObject;
     public GameObject userCamera;
     public float distanceFromUser = 2.0f;
     public float heightFromGround = 1.5f;
 
-    private bool _menuDisplayed;
+    private bool _objectActive;
 
-    public void ToggleMenu()
+    public void Toggle()
     {
-        _menuDisplayed = !_menuDisplayed;
+        _objectActive = !_objectActive;
 
-        if (_menuDisplayed)
-            OrientTowardViewer();
+        if (_objectActive)
+            UpdateOrientation();
 
-        ActivateMenu(_menuDisplayed);
+        ActivateMenu(_objectActive);
     }
 
     public void Cancel() => ActivateMenu(false);
@@ -32,22 +32,22 @@ public class OrientToCamera : MonoBehaviour
     {
         if (activate)
         {
-            menu.SetActive(activate);
+            targetObject.SetActive(activate);
         } else
         {
-            menu.SetActive(activate);
+            targetObject.SetActive(activate);
         }
             
     }
 
-    private void OrientTowardViewer()
+    private void UpdateOrientation()
     {
         Vector3 newPosition = userCamera.transform.TransformPoint(0, 0, distanceFromUser);
         newPosition.y = userCamera.transform.position.y;
-        menu.transform.position = newPosition;
+        targetObject.transform.position = newPosition;
 
-        menu.transform.position = newPosition;
-        menu.transform.LookAt(userCamera.transform);
-        menu.transform.Rotate(0, 180.0f, 0);
+        targetObject.transform.position = newPosition;
+        targetObject.transform.LookAt(userCamera.transform);
+        targetObject.transform.Rotate(0, 180.0f, 0);
     }
 }
