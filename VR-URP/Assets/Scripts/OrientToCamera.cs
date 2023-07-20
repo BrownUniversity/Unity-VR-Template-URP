@@ -17,20 +17,9 @@ public class OrientToCamera : MonoBehaviour
         if (_objectActive)
             UpdateOrientation();
 
-        ActivateMenu(_objectActive);
+        targetObject.SetActive(_objectActive);
     }
 
-    private void ActivateMenu( bool activate )
-    {
-        if (activate)
-        {
-            targetObject.SetActive(activate);
-        } else
-        {
-            targetObject.SetActive(activate);
-        }
-            
-    }
 
     private void UpdateOrientation()
     {
