@@ -28,7 +28,27 @@ public class OrientToCamera : MonoBehaviour
 
     public void Toggle()
     {
-        targetObject.SetActive(!targetObject.activeSelf);
+        //If the object is disabled, enable it...
+        if(!targetObject.activeSelf)
+        {
+            targetObject.SetActive(!targetObject.activeSelf);
+            return;
+        }
+
+        // ...if the object is enabled check is position
+        Vector3 newPosition = GetNewPosition();
+        float distance = Vector3.Distance(newPosition, targetObject.transform.position);
+
+        if(distance > 0.5)
+        {
+            UpdateOrientation();
+        } else
+        {
+            targetObject.SetActive(!targetObject.activeSelf);
+        }
+        
+
+
     }
 
     private Vector3 GetNewPosition()
