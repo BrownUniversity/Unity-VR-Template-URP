@@ -3688,7 +3688,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1260520949}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.36144, z: 0}
+  m_LocalPosition: {x: 0, y: 1.1176, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5336,6 +5336,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1984325449}
   - component: {fileID: 1984325450}
+  - component: {fileID: 1984325451}
   m_Layer: 0
   m_Name: Menu
   m_TagString: Untagged
@@ -5376,6 +5377,53 @@ MonoBehaviour:
   distanceFromUser: 2
   heightFromGround: 1.5
   reverseObject: 1
+--- !u!114 &1984325451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984325448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d13f618ee14c4d789f036f0f71ed167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action:
+    m_Name: Action
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 3e893e81-2abb-4900-8b7b-ca4cf7e03227
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 27877c2b-125d-42d1-88e6-e484f36dd4de
+      m_Path: <XRController>{LeftHand}/menu
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Action
+      m_Flags: 0
+    m_Flags: 0
+  OnPress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1984325450}
+        m_TargetAssemblyTypeName: OrientToCamera, Assembly-CSharp
+        m_MethodName: Toggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnRelease:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2026858569
 GameObject:
   m_ObjectHideFlags: 0
@@ -5389,7 +5437,6 @@ GameObject:
   - component: {fileID: 2026858573}
   - component: {fileID: 2026858572}
   - component: {fileID: 2026858571}
-  - component: {fileID: 2026858575}
   m_Layer: 0
   m_Name: MenuCanvas
   m_TagString: Untagged
@@ -5503,20 +5550,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &2026858575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2026858569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5494034cad4b446eaaad71b600a16f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toggleMenuReference: {fileID: 4210670752947943457, guid: c348712bda248c246b8c49b3db54643f,
-    type: 3}
 --- !u!1 &2078182501
 GameObject:
   m_ObjectHideFlags: 0
@@ -5571,7 +5604,7 @@ MonoBehaviour:
   m_OriginBaseGameObject: {fileID: 2078182501}
   m_CameraFloorOffsetObject: {fileID: 1260520949}
   m_RequestedTrackingOriginMode: 0
-  m_CameraYOffset: 1.36144
+  m_CameraYOffset: 1.1176
 --- !u!114 &2078182505
 MonoBehaviour:
   m_ObjectHideFlags: 0
