@@ -7,7 +7,6 @@ public class OrientToCamera : MonoBehaviour
     public GameObject targetObject;
     public GameObject userCamera;
     public float distanceFromUser = 2.0f;
-    public float heightFromGround = 1.5f;
     public bool reverseObject;
 
     private bool _objectActive;
@@ -19,7 +18,7 @@ public class OrientToCamera : MonoBehaviour
 
     private void Start()
     {
-        UpdateOrientation(GetNewPosition());
+        Toggle();
     }
 
     private void Update()
