@@ -1,12 +1,12 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class OrientToCamera : MonoBehaviour
 {
     public GameObject targetObject;
     public GameObject userCamera;
     public float distanceFromUser = 2.0f;
-    public float heightFromGround = 1.5f;
     public bool reverseObject;
 
     private bool _objectActive;
@@ -14,6 +14,11 @@ public class OrientToCamera : MonoBehaviour
     private void Awake()
     {
         _objectActive = targetObject.activeSelf;
+    }
+
+    private void Start()
+    {
+        Toggle();
     }
 
     private void Update()
@@ -40,7 +45,7 @@ public class OrientToCamera : MonoBehaviour
         Vector3 newPosition = GetNewPosition();
         float distance = Vector3.Distance(newPosition, targetObject.transform.position);
 
-        if(distance > 0.75)
+        if(distance > 0.5)
         {
             UpdateOrientation(newPosition);
         } else
