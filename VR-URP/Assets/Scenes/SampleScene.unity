@@ -1102,11 +1102,9 @@ MonoBehaviour:
 
     There is also
     a continuous move provider (left hand) and a continuous turn provider (right
-    hand). You can toggle between teleportation and continuous movement using the
-    left hand secondary button (Y).
+    hand).
 
-    This menu can be toggled with the menu button
-    on the left hand.'
+    This menu can be toggled with the menu button on the left hand.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
