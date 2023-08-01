@@ -12,7 +12,7 @@ package_folder_path=$2
 
 template_name="vrurp"
 full_template_name="com.unity.template.$template_name"
-template_display_name="VR using URP"
+template_display_name="VR (URP)"
 template_description="A template for VR apps using the Universal Render Pipeline"
 
 err() {
@@ -56,6 +56,38 @@ if [[ "$confirm" != "y" && "$confirm" != "Y" ]]; then
     echo "Operation canceled."
     exit 0
 fi
+
+
+# Create new package.json with template name and information
+OUT="$package_folder_path/package.json"
+
+cat  <<EOF>$OUT
+{
+  "name": "$full_template_name",
+  "displayName": "$template_display_name",
+  "version": "8.1.1",
+  "type": "template",
+  "host": "hub",
+  "unity": "2021.2",
+  "description": "$template_description",
+  "dependencies": {
+    "com.unity.collab-proxy": "1.13.5",
+    "com.unity.feature.development": "1.0.1",
+    "com.unity.textmeshpro": "3.0.6",
+    "com.unity.timeline": "1.6.2",
+    "com.unity.visualscripting": "1.7.6",
+    "com.unity.ugui": "1.0.0"
+  },
+  "upmCi": {
+    "footprint": "dcf05ffe905e37f62062987189b355e007fae89d"
+  },
+  "repository": {
+    "url": "https://github.cds.internal.unity3d.com/unity/com.unity.template-3d.git",
+    "type": "git",
+    "revision": "aaca9e161ac89c1fb5ec031a43d3524ff8f13a07"
+  }
+}
+EOF
 
 project_data_path="$package_folder_path/ProjectData~"
 
