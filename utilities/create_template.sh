@@ -15,7 +15,6 @@ full_template_name="com.unity.template.$template_name"
 template_display_name="VR using URP"
 template_description="A template for VR apps using the Universal Render Pipeline"
 
-
 err() {
   echo "[$(date +'%Y-%m-%dT%H:%M:%S%z')]: $*" >&2
 }

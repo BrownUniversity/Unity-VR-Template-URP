@@ -81,3 +81,7 @@ crashlytics-build.properties
 Icon?
 ehthumbs.db
 Thumbs.db
+
+# Template creation utilities
+utilities/package
+utilities/*.tgz
